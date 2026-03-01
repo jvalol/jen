@@ -57,6 +57,7 @@ WORKDIR /app
 RUN chown nobody /app
 
 COPY --from=builder --chown=nobody:root /app/_build/${MIX_ENV}/rel/jen ./
+RUN chmod +x /app/bin/jen /app/bin/server /app/bin/migrate
 
 USER nobody
 
